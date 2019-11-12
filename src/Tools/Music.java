@@ -6,8 +6,8 @@ import javafx.scene.media.MediaPlayer;
 import java.nio.file.Paths;
 
 public class Music {
-    private static final String MAIN_MENU_THEME = "C:/Users/e1804065/IdeaProjects/src/Asset/Sons/MenuSong.mp3";
-    private static final String PIOU = "C:/Users/e1804065/IdeaProjects/src/Asset/Sons/sonBtn.mp3";
+    private static final String MAIN_MENU_THEME = "src/Asset/Sons/menuSong.mp3";
+    private static final String PIOU = "src/Asset/Sons/sonBtn.mp3";
     private static MediaPlayer mediaPlayer;
     private static MediaPlayer mediaPlayer1;
 
@@ -26,6 +26,11 @@ public class Music {
         mediaPlayer1.setCycleCount(1);
         mediaPlayer1.setVolume(volume);
         mediaPlayer1.play();
+    }
+
+    public static void setVolume(double volume) {
+        Music.volume = volume;
+        if(mediaPlayer!=null) mediaPlayer.setVolume(volume);
     }
 
 /*    public static void startGameMusic() {
